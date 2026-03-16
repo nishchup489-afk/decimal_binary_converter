@@ -392,3 +392,6 @@ This project is part of the **100 Python Live Projects challenge**, designed to 
 Each project focuses on a different concept ranging from algorithms to full stack development.
 
 Stay tuned for the next project.
+
+
+
