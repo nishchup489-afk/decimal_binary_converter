@@ -1,0 +1,1 @@
+from src.binary_decimal.main import app
