@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Number Converter</title>
+
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+<div class="bg-white p-8 rounded-xl shadow-lg w-[400px]">
+
+<h1 class="text-2xl font-bold mb-6 text-center">Number Converter</h1>
+
+<div class="flex gap-3 mb-6 justify-center">
+
+<button id="dtbButton"
+class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+Decimal → Binary
+</button>
+
+<button id="btdButton"
+class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+Binary → Decimal
+</button>
+
+</div>
+
+
+<div class="dtb hidden">
+<form action="/dtb" method="post" class="flex flex-col gap-3">
+
+<input 
+type="text"
+name="decimal"
+placeholder="Enter Decimal Number"
+class="border border-gray-300 rounded py-2 px-4"
+/>
+
+<button type="submit"
+class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+Convert to Binary
+</button>
+
+</form>
+</div>
+
+
+<div class="btd hidden">
+<form action="/btd" method="post" class="flex flex-col gap-3">
+
+<input 
+type="text"
+name="binary"
+placeholder="Enter Binary Number"
+class="border border-gray-300 rounded py-2 px-4"
+/>
+
+<button type="submit"
+class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+Convert to Decimal
+</button>
+
+</form>
+</div>
+
+
+<div class="result mt-6 text-center">
+
+{% if result %}
+<p class="text-xl font-bold">Result: {{ result }}</p>
+{% endif %}
+
+</div>
+
+</div>
+
+
+<script>
+
+const dtbButton = document.getElementById('dtbButton')
+const btdButton = document.getElementById('btdButton')
+
+const dtbForm = document.querySelector('.dtb')
+const btdForm = document.querySelector('.btd')
+
+dtbButton.addEventListener('click', () => {
+
+dtbForm.classList.remove('hidden')
+btdForm.classList.add('hidden')
+
+})
+
+btdButton.addEventListener('click', () => {
+
+btdForm.classList.remove('hidden')
+dtbForm.classList.add('hidden')
+
+})
+
+</script>
+
+</body>
+</html>
